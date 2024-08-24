@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parent {
+    display: flex;
+    width: 800px;
+    height: 800px;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+img {
+    width: 200px;
+    height: 200px;
+}
