@@ -1,0 +1,26 @@
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.a1 button{
+    border-radius: 15px;
+    background-color: rgb(2, 160, 160);
+    color: white;
+}
+
+div{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+}
+
+p{
+    color: white;
+}
+*{
+    gap: 1150px;
+}
+nav a{
+    row-gap: 30px;
+}
