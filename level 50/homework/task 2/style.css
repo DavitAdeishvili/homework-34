@@ -1,0 +1,28 @@
+.parent{
+    background-color: rgb(10, 52, 94);
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    length: 800px;
+    align-items: center;
+    border-radius: 15px;
+    align-self: center;
+    margin: auto;
+    padding: 10px;
+}
+.parent div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.parent div p{
+    gap: 20px;
+}
+
+h2{
+    align-self: left;
+}
+
+body{
+    background-color: rgb(2, 30, 58);
+}
