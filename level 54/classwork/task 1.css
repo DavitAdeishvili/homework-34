@@ -1,0 +1,31 @@
+div{
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation-name: firstanime;
+    animation-duration: 20s;
+    animation-iteration-count: infinite
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes firstanime{
+    20% {background-color: orange; color: gray;}
+    40% {background-color: red; color: brown;}
+    60% {background-color: brown; color: red;}
+    80% {background-color: gray; color: orange;}
+    100% {background-color: black; color: yellow;}
+}
+
+/* animation-name --- sets which animation contains to which element */
+/* animation-duration --- sets how much time it takes for animation */
+/* animation-iteration-count --- sets how much time it repeats */
