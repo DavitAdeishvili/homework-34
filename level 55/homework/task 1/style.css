@@ -1,0 +1,40 @@
+img{
+    background-color: purple;
+}
+
+.parent{
+    background-color: rgb(44, 1, 80);
+    width: 500px;
+    height: 400px;
+}
+.child{
+    color: blueviolet;
+}
+
+*{
+    color: white;
+}
+
+.parent p{
+    color: rgb(156, 156, 156);
+}
+.parentofdd{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.grandparent{
+    display: flex;
+}
+
+img{
+    width: 500px;
+    height: 400px;
+}
+
+body{
+    background-color: rgb(0, 0, 50);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
