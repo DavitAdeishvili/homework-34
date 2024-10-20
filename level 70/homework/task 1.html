@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static vs Dynamic Arrays</title>
+    <link rel="stylesheet" href="./task 1.css">
+</head>
+<body>
+
+    <div id="slide1" class="slide active">
+        <h1>Static vs Dynamic Arrays in JavaScript</h1>
+        <p>A Comprehensive Guide</p>
+    </div>
+
+    <div id="slide2" class="slide">
+        <h2>What is an Array?</h2>
+        <p>An array is a data structure that can hold multiple values under a single variable name.</p>
+        <p>Arrays are zero-indexed collections of elements.</p>
+    </div>
+
+    <div id="slide3" class="slide">
+        <h2>Static Arrays</h2>
+        <p>JavaScript does not have true static arrays. However, we can simulate static behavior.</p>
+        <p>Characteristics:</p>
+        <ul>
+            <li>Size is determined at creation.</li>
+            <li>Cannot easily change the size after creation.</li>
+        </ul>
+        <pre><code>const staticArray = new Array(5); // Creates an array of size 5
+staticArray[0] = 1;
+staticArray[1] = 2;</code></pre>
+    </div>
+
+    <div id="slide4" class="slide">
+        <h2>Dynamic Arrays</h2>
+        <p>JavaScript arrays are dynamic and can grow and shrink in size.</p>
+        <p>Characteristics:</p>
+        <ul>
+            <li>Size can change during runtime.</li>
+            <li>Elements can be added or removed as needed.</li>
+        </ul>
+        <pre><code>const dynamicArray = [];
+dynamicArray.push(1); // Add element
+dynamicArray.push(2, 3); // Add multiple elements
+dynamicArray.pop(); // Remove the last element</code></pre>
+    </div>
+
+    <div id="slide5" class="slide">
+        <h2>Differences</h2>
+        <table>
+            <tr><th>Feature</th><th>Static Arrays</th><th>Dynamic Arrays</th></tr>
+            <tr><td>Size</td><td>Fixed at creation</td><td>Can change dynamically</td></tr>
+            <tr><td>Memory Allocation</td><td>Less flexible</td><td>More flexible</td></tr>
+            <tr><td>Performance</td><td>Slightly faster for fixed sizes</td><td>Can be slower with resizing</td></tr>
+        </table>
+    </div>
+
+    <div id="slide6" class="slide">
+        <h2>Use Cases</h2>
+        <p><strong>Static Arrays:</strong> When you know the number of elements in advance.</p>
+        <p><strong>Dynamic Arrays:</strong> When the number of elements is unknown or can change.</p>
+    </div>
+
+    <div id="slide7" class="slide">
+        <h2>Conclusion</h2>
+        <p>Both types of arrays have their advantages.</p>
+        <p>JavaScript primarily uses dynamic arrays, allowing flexibility in managing data.</p>
+    </div>
+
+    <div id="slide8" class="slide">
+        <h2>Questions</h2>
+        <p>Any questions or comments?</p>
+    </div>
+
+    <button id="prevBtn" onclick="changeSlide(-1)">Previous</button>
+    <button id="nextBtn" onclick="changeSlide(1)">Next</button>
+
+    <script src="task 1.js"></script>
+
+</body>
+</html>
