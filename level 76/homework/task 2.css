@@ -1,0 +1,109 @@
+/* Container for shapes */
+.shape-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    width: 350px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Common shape styles */
+  .shape {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Individual shapes */
+  .square {
+    background-color: #ff9e9e;
+  }
+
+  .circle {
+    background-color: #ff8c32;
+    border-radius: 50%;
+  }
+
+  .rectangle {
+    background-color: #277d78;
+    width: 100px;
+    height: 60px;
+  }
+
+  .triangle {
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 80px solid #54b4eb;
+    box-shadow: none; /* Remove shadow for triangle */
+  }
+
+  .pentagon {
+    background-color: #7ed957;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  }
+
+  .oval {
+    background-color: #f3a683;
+    border-radius: 50%;
+    width: 100px;
+    height: 60px;
+  }
+
+  .star {
+    background-color: #c0c0c0;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  .crescent {
+    background-color: #ff8c32;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .crescent::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #f9f9f9;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
+  }
+
+  .heart {
+    background-color: #fdb827;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    transform: rotate(-45deg);
+  }
+  .heart::before,
+  .heart::after {
+    content: '';
+    background-color: #fdb827;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+  }
+  .heart::before {
+    top: -40px;
+    left: 0;
+  }
+  .heart::after {
+    top: 0;
+    left: 40px;
+  }
