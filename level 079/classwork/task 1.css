@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: aquamarine;
+}
+
+@keyframes buttonChange{
+    from {background-color: red;}
+    to {background-color: yellow;}
+    from {color: yellow;}
+    to {color: red;}
+    from {top: 500px;}
+    to {top: 50px;}
+    from {left: 500px;}
+    to{left: 50px;}
+}
+
+button{
+    background-color: yellow;
+    color: red;
+    position: absolute;
+    top: 500px;
+    left: 500px;
+    animation-name: buttonChange;
+    animation-duration: 10s;
+}
