@@ -1,0 +1,38 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.parent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 500px;
+}
+
+.divs{
+    width: 750px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: purple solid 5px;
+    flex-direction: column;
+}
+
+button{
+    border: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.buttons{
+    position: absolute;
+    left: 700px;
+    bottom: 0;    
+    position: fixed;
+}
