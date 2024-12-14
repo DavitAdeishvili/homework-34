@@ -1,0 +1,19 @@
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 8px;
+            font-size: 14px;
+            width: 100%;
+            max-width: 300px;
+        }
+        input[type="submit"] {
+            width: auto;
+            cursor: pointer;
+        }
+        .error {
+            color: #dc3545;
+            font-size: 12px;
+        }
