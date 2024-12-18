@@ -1,0 +1,27 @@
+h1{
+    text-align: center;
+}
+
+.div1{
+    position: absolute;
+    left: 680px;
+    top: 695px;
+}
+
+.div2{
+    position: absolute;
+    left: 1250px;
+    top: 695px;
+}
+
+.div3{
+    position: absolute;
+    left: 680px;
+    top: 1230px;
+}
+
+.div4{
+    position: absolute;
+    left: 1250px;
+    top: 1230px;
+}

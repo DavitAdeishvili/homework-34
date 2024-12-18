@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .responsive-text {
+            font-size: calc(15px + 1vw);
+            max-font-size: 30px;
+            min-font-size: 15px;
+        }
+        @media (min-width: 1200px) {
+            .responsive-text {
+                font-size: 30rpx;
+            }
+        }
+        @media (max-width: 600px) {
+            .responsive-text {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="responsive-text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus neque cumque molestiae autem repellendus est sed tenetur sint fugiat! Amet repellendus quasi eaque quas ad sunt laudantium dignissimos quo vel rerum aspernatur qui, possimus eius quos accusantium doloribus temporibus, veniam fugit dolorem aliquid? Modi, ducimus voluptatibus et quia officiis ex cumque aspernatur quis. A necessitatibus sapiente vel delectus quaerat quod. Incidunt animi perspiciatis cupiditate beatae similique fuga natus at consequuntur eligendi sed! Totam rerum aliquam consequuntur quaerat suscipit earum possimus doloribus eius velit facilis ea fuga ab dolor placeat culpa consequatur dolore veritatis excepturi, ad maxime eum in reprehenderit illum!
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 3</title>
+    <style>
+        #div2{
+            width: 200px;
+            height: 300px;
+        }
+
+        #div3{
+            width: 570px;
+        }
+
+        #div4{
+            width: 200px;
+        }
+
+        #div5{
+            width: 1157px;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: grid;
+            gap: 10px;
+            width: 90%;
+            max-width: 1200px;
+        }
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            border: cyan 2px solid;
+        }
+
+        @media (max-width: 767px) {
+            #div1, #div2, #div4, #div5{
+                width: 400px;
+                height: 50px;
+            }
+
+            #div3{
+                width: 400px;
+                height: 100px;
+            }
+
+            .something{
+                flex-direction: column;
+                gap: 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column;" class="container">
+        <div class="card" id="div1">A</div>
+        <div class="something" style="display: flex; gap: 50px;">
+            <div class="card" id="div2">B</div>
+            <div class="card" id="div3">C</div>
+            <div class="card" id="div4">D</div>
+        </div>
+        <div class="card" id="div5">E</div>
+    </div>
+</body>
+</html>
