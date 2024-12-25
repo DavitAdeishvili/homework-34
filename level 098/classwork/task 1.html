@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Filter</title>
+    <link rel="stylesheet" href="./task 1.css">
+</head>
+<body>
+    <h1>Email Filter</h1>
+    <br><br><br>
+    <div>
+        <label for="filter">Filter by subject:</label>
+        <select id="filter">
+            <option value="მოგზაურობა">მოგზაურობა</option>
+            <option value="მოხსენება">მოხსენება</option>
+            <option value="გაცნობიერება">გაცნობიერება</option>
+        </select>
+        <button onclick="filterEmails()">Filter</button>
+    </div>
+    <br><br>
+    <div>
+        <h2>Filtered Emails</h2>
+        <ul id="emailList"></ul>
+    </div>
+    <div>
+        <h2>Add New Email</h2>
+        <br>
+        <form id="emailForm">
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" required>
+            <label for="content">Content:</label>
+            <input type="text" id="content" required>
+            <button type="submit">Add Email</button>
+        </form>
+    </div>
+    <br><br>
+    <div>
+        <h2>Current Time</h2>
+        <p style="position: absolute; left: 730px;" id="currentTime"></p>
+    </div>
+    <script src="task 1.js"></script>
+</body>
+</html>
