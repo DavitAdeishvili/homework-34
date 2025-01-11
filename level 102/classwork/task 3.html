@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter with localStorage</title>
+</head>
+<body>
+    <div>
+        <h1>Counter: <span id="counter">0</span></h1>
+        <button onclick="increment()">+</button>
+        <button onclick="decrement()">-</button>
+        <button onclick="reset()">Reset</button>
+    </div>
+
+    <script>
+        let counterValue = localStorage.getItem('counter') ? parseInt(localStorage.getItem('counter')) : 0;
+        document.getElementById('counter').innerText = counterValue;
+
+        function increment() {
+            counterValue++;
+            updateCounter();
+        }
+
+        function decrement() {
+            counterValue--;
+            updateCounter();
+        }
+
+        function reset() {
+            counterValue = 0;
+            updateCounter();
+        }
+
+        function updateCounter() {
+            document.getElementById('counter').innerText = counterValue;
+            localStorage.setItem('counter', counterValue);
+        }
+    </script>
+</body>
+</html>

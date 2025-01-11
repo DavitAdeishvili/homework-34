@@ -1,0 +1,1 @@
+print ("I think that this codewars is not solvabl, I tried and wrote it in 3 different ways but it seems like its not working, all has same errors in it")

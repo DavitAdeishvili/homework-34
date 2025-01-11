@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 1</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="namePrompt">
+        <h1>Welcome!</h1>
+        <label for="userName">Enter your name:</label>
+        <input type="text" id="userName" />
+        <button onclick="saveName()">Submit</button>
+    </div>
+
+    <div id="gameArea" class="hidden">
+        <h1>Welcome, <span id="displayName"></span>!</h1>
+        <label for="bgColor">Choose background color:</label>
+        <input type="color" id="bgColor" onchange="changeBackgroundColor()" />
+        <p>Your Score: <span id="score">0</span></p>
+        <p>Guess the number between <span id="rangeStart">1</span> and <span id="rangeEnd">2</span>:</p>
+        <input type="number" id="guess" />
+        <button onclick="checkGuess()">Submit</button>
+    </div>
+
+    <script>
+        const namePrompt = document.getElementById('namePrompt');
+        const gameArea = document.getElementById('gameArea');
+        const displayName = document.getElementById('displayName');
+        const bgColor = document.getElementById('bgColor');
+        const scoreElement = document.getElementById('score');
+        const rangeStart = document.getElementById('rangeStart');
+        const rangeEnd = document.getElementById('rangeEnd');
+        const guessInput = document.getElementById('guess');
+
+        let userName = localStorage.getItem('userName');
+        let score = parseInt(localStorage.getItem('score')) || 0;
+        let maxRange = parseInt(localStorage.getItem('maxRange')) || 2;
+        let randomNumber = generateRandomNumber(1, maxRange);
+
+        function saveName() {
+            const name = document.getElementById('userName').value;
+            if (name) {
+                localStorage.setItem('userName', name);
+                userName = name;
+                initializeGame();
+            }
+        }
+
+        function initializeGame() {
+            if (userName) {
+                namePrompt.classList.add('hidden');
+                gameArea.classList.remove('hidden');
+                displayName.textContent = userName;
+                scoreElement.textContent = score;
+                rangeStart.textContent = 1;
+                rangeEnd.textContent = maxRange;
+            }
+        }
+
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = bgColor.value;
+        }
+
+        function generateRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function checkGuess() {
+            const userGuess = parseInt(guessInput.value);
+            if (userGuess === randomNumber) {
+                alert('Correct!');
+                score++;
+                maxRange *= 2;
+                randomNumber = generateRandomNumber(1, maxRange);
+                rangeEnd.textContent = maxRange;
+                localStorage.setItem('score', score);
+                localStorage.setItem('maxRange', maxRange);
+                scoreElement.textContent = score;
+            } else {
+                alert('Wrong guess. Try again!');
+            }
+            guessInput.value = '';
+        }
+
+        if (userName) {
+            initializeGame();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ece9e6, #ffffff);
+            color: #333;
+        }
+        header {
+            background: #4CAF50;
+            color: white;
+            width: 100%;
+            padding: 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .game-container {
+            max-width: 600px;
+            width: 100%;
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .tab-container {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background: #f4f4f4;
+            width: 300px;
+            height: 100%;
+            border-left: 3px solid #ccc;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        .tab-container.open {
+            transform: translateX(0);
+        }
+        .tab-header {
+            background: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .tab-content {
+            padding: 10px;
+        }
+        .game-log {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .game-log.win {
+            background: #d4edda;
+            color: #155724;
+        }
+        .game-log.loss {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="position: absolute; top: 0; left: 670px; color: white; background: #155724;">Jeiran Game</h1>
+    </header>
+
+    <div class="game-container">
+        <h2>Play with Jeiran</h2>
+        <p>Make your choice:</p>
+        <button onclick="playGame('Rock')">Rock</button>
+        <button onclick="playGame('Paper')">Paper</button>
+        <button onclick="playGame('Scissors')">Scissors</button>
+        <p id="result" style="margin-top: 20px; font-weight: bold;"></p>
+    </div>
+
+    <div class="tab-container" id="tab">
+        <div class="tab-header" onclick="toggleTab()">
+            Game Log
+        </div>
+        <div class="tab-content" id="logContent">
+            <p>No games played yet.</p>
+        </div>
+    </div>
+
+    <script>
+        const tab = document.getElementById('tab');
+        const logContent = document.getElementById('logContent');
+        const resultElement = document.getElementById('result');
+        let gameLog = [];
+
+        function toggleTab() {
+            tab.classList.toggle('open');
+        }
+
+        function playGame(playerChoice) {
+            const choices = ['Rock', 'Paper', 'Scissors'];
+            const jeiranChoice = choices[Math.floor(Math.random() * choices.length)];
+            let result = '';
+
+            if (playerChoice === jeiranChoice) {
+                result = 'Draw!';
+            } else if (
+                (playerChoice === 'Rock' && jeiranChoice === 'Scissors') ||
+                (playerChoice === 'Paper' && jeiranChoice === 'Rock') ||
+                (playerChoice === 'Scissors' && jeiranChoice === 'Paper')
+            ) {
+                result = 'You Win!';
+                gameLog.push({ result: 'win', playerChoice, jeiranChoice, time: new Date().toLocaleString() });
+            } else {
+                result = 'You Lose!';
+                gameLog.push({ result: 'loss', playerChoice, jeiranChoice, time: new Date().toLocaleString() });
+            }
+
+            resultElement.textContent = `You chose ${playerChoice}, robot chose ${jeiranChoice}. ${result}`;
+            updateLog();
+        }
+
+        function updateLog() {
+            logContent.innerHTML = '';
+            gameLog.forEach((log) => {
+                const logEntry = document.createElement('div');
+                logEntry.classList.add('game-log', log.result);
+                logEntry.textContent = `Result: ${log.result.toUpperCase()} | Player: ${log.playerChoice} | Jeiran: ${log.jeiranChoice} | Time: ${log.time}`;
+                logContent.appendChild(logEntry);
+            });
+
+            if (gameLog.length === 0) {
+                logContent.innerHTML = '<p>No games played yet.</p>';
+            }
+        }
+    </script>
+</body>
+</html>

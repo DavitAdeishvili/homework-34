@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework</title>
+</head>
+<body>
+    <center>
+    <div>
+        <h1>Random ID Generator</h1>
+        <button onclick="generateID()">Generate ID</button>
+        <input type="text" id="inputID" placeholder="Enter ID to check">
+        <button onclick="checkID()">Check ID</button>
+        <p id="result"></p>
+    </div>
+    </center>
+    <script>
+        function generateID() {
+            const randomID = 'ID-' + Math.floor(Math.random() * 10000);
+            localStorage.setItem(randomID, randomID);
+            alert('Generated ID: ' + randomID);
+        }
+
+        function checkID() {
+            const inputID = document.getElementById('inputID').value;
+            let exists = false;
+            for (let i = 0; i < localStorage.length; i++) {
+                if (localStorage.key(i) === inputID) {
+                    exists = true;
+                    break;
+                }
+            }
+            if (exists) {
+                document.getElementById('result').innerText = `ID exists: ${inputID}`;
+            } else {
+                document.getElementById('result').innerText = 'ID does not exist';
+            }
+        }
+    </script>
+</body>
+</html>
