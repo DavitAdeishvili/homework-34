@@ -1,0 +1,14 @@
+img{
+    width: 800px;
+    height: 700px;
+}
+
+button{
+    background-color: aqua;
+    border-radius: 20px;
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    right: 110px;
+    top: 270px;
+}

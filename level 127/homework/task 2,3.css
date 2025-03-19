@@ -1,0 +1,19 @@
+img{
+    width: 900px;
+    height: 700px;
+}
+
+button{
+    background-color: aqua;
+    border-radius: 20px;
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    right: 50px;
+    top: 400px;
+    font-size: 150px;
+}
+
+h1{
+    text-align: center;
+}
